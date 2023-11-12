@@ -9,7 +9,7 @@ import whisper
 from recog.utils import model_converter, ResultWriter, WriteTXT, WriteSRT, WriteVTT, WriteTSV, WriteJSON
 from faster_whisper import WhisperModel
 
-model_size = "small"
+model_size = "large-v2"
 
 # model_name = os.getenv("ASR_MODEL", "faster-whisper-small.en")
 # model_path = os.path.join("/Users/lennyz/huggingface", model_name)
