@@ -17,7 +17,7 @@ model_size = "large-v2"
 
 if torch.cuda.is_available():
     logging.info("init whisper cuda float32")
-    model = WhisperModel(model_size, cpu_threads=8, num_workers=16, device="cuda", compute_type="float32")
+    model = WhisperModel(model_size, device="cuda", compute_type="int8")
 else:
     logging.info("init whisper cpu float32")
     model = WhisperModel(model_size, cpu_threads=10, num_workers=4, device="cpu", compute_type="int8")
