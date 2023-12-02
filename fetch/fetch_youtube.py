@@ -228,7 +228,7 @@ def fetch_youtube_info_by_dl(original_url) -> VideoInfo:
                          audio_url=audio_url)
     except Exception as e:
         logging.error("下载youtube字幕异常, 返回null %s", e)
-        return False
+        raise BizException(-1,"Youtube url analyze error ")
 
 
 def read_subtitles_file(stdout: str):
