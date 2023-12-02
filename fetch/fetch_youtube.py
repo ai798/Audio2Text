@@ -34,7 +34,7 @@ headers = {
 }
 
 # youtube-dl
-YOUTUBE_DL_CMD = "youtube-dl "
+YOUTUBE_DL_CMD =  HOME_PATH + "/opt/youtube-dl/youtube-dl "
 YOUTUBE_CHECK_SUBTITLES = YOUTUBE_DL_CMD + "--list-subs {}"
 # 上传的字幕
 YOUTUBE_DOWNLOAD_SUBTITLE = (YOUTUBE_DL_CMD +
@@ -234,7 +234,7 @@ def fetch_youtube_info_by_dl(original_url) -> VideoInfo:
                          audio_url=audio_url)
     except Exception as e:
         logging.error("下载youtube字幕异常, 返回null %s", e)
-        raise BizException(-1,"Youtube url analyze error ")
+        raise BizException(-1, "Youtube url analyze error ")
 
 
 def read_subtitles_file(stdout: str):
