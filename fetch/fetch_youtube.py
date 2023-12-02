@@ -15,6 +15,13 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 HOME_PATH = os.path.expanduser('~')
 DOWNLOAD_PATH = HOME_PATH + "/data/files/scriptpro/download/youtube/"
 
+if not os.path.exists(DOWNLOAD_PATH):
+    os.makedirs(DOWNLOAD_PATH)
+if not os.path.exists(DOWNLOAD_PATH + "subtitles"):
+    os.makedirs(DOWNLOAD_PATH + "subtitles")
+if not os.path.exists(DOWNLOAD_PATH + "json"):
+    os.makedirs(DOWNLOAD_PATH + "json")
+
 SUBTILT_HOST = "https://savesubs.com"
 SUBTITLE_DOWNLOADER_API = 'https://savesubs.com/action/extract'
 headers = {
