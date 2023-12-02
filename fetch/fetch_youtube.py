@@ -34,8 +34,7 @@ headers = {
 }
 
 # youtube-dl
-YOUTUBE_DL_CMD = "/Users/lennyz/github/repo/ytdl-org/youtube-dl/youtube-dl "
-YOUTUBE_DOWNLOAD_AUDIO_CMD = "youtube-dl "
+YOUTUBE_DL_CMD = "youtube-dl "
 YOUTUBE_CHECK_SUBTITLES = YOUTUBE_DL_CMD + "--list-subs {}"
 # 上传的字幕
 YOUTUBE_DOWNLOAD_SUBTITLE = (YOUTUBE_DL_CMD +
