@@ -19,12 +19,13 @@ DOUYIN_URL = "https://www.douyin.com/"
 
 
 class VideoInfo:
-    def __init__(self, video_no, video_title, video_desc, video_url, audio_url):
+    def __init__(self, video_no, video_title, video_url, audio_url, video_subtitles, video_desc=""):
         self.video_no = video_no
         self.video_title = video_title
         self.video_desc = video_desc
         self.video_url = video_url
         self.audio_url = audio_url
+        self.video_subtitles = video_subtitles
 
 
 def fetch_douyin_info(original_url: str, cookie: str) -> VideoInfo:
