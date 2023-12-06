@@ -1,6 +1,5 @@
 import time
 
-from whisper_jax import FlaxWhisperPipline
 
 #
 #

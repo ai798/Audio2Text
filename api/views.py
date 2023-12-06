@@ -36,6 +36,8 @@ def get_video_info(shar_url: str, cookie: str) -> VideoContent:
         return get_video_content_from_tiktok(shar_url)
     elif "youtube" in shar_url:
         return get_video_content_youtube(shar_url)
+    else:
+        raise BizException(-1, "Url not support !")
 
 
 

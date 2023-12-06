@@ -19,7 +19,7 @@ DOUYIN_URL = "https://www.douyin.com/"
 
 
 class VideoInfo:
-    def __init__(self, video_no, video_title, video_url, audio_url, video_subtitles, video_desc=""):
+    def __init__(self, video_no, video_title, video_url, audio_url, video_subtitles="", video_desc=""):
         self.video_no = video_no
         self.video_title = video_title
         self.video_desc = video_desc
@@ -58,7 +58,8 @@ def fetch_douyin_info(original_url: str, cookie: str) -> VideoInfo:
         title = aweme_detail['preview_title']
         desc = aweme_detail['desc']
         logging.info("Get music videoId: %s, music url: %s", video_no, music_url)
-        return VideoInfo(video_no, title, desc, original_url, music_url)
+        return VideoInfo(video_no=video_no, video_title=title, video_desc=desc, video_url=original_url,
+                         audio_url=music_url)
     else:
         return VideoInfo()
 

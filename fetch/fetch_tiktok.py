@@ -32,6 +32,9 @@ def fetch_tiktok_info(origi_url):
     }
     api_url = f'https://api16-normal-c-useast1a.tiktokv.com/aweme/v1/feed/?aweme_id={video_no}'
     resp = requests.get(api_url, headers=tiktok_api_headers)
+    title = ""
+    desc = ""
+    music_url = ""
     if resp.status_code == HTTPStatus.OK:
         aweme_detail_json = json.loads(resp.content)
         aweme_detail = aweme_detail_json["aweme_list"][0]
@@ -40,7 +43,7 @@ def fetch_tiktok_info(origi_url):
         desc = aweme_detail['desc']
         logging.info("Get music videoId: %s, music url: %s", video_no, music_url)
 
-    info = VideoInfo(video_no, title, desc, origi_url, music_url)
+    info = VideoInfo(video_no=video_no, video_title=title, video_desc=desc, video_url=origi_url, audio_url=music_url)
     return info
 
 
@@ -48,7 +51,7 @@ def get_tiktok_video_no(url):
     headers = {
         'User-Agent': TIKTOK_AGENT,
     }
-    resp = requests.get(url, headers=headers)
+    resp = requests.get(url, headers=headers, verify=False)
     if not resp.ok:
         logging.error("get_douyin_video_id url: %s ,reason:%s", url, resp
                       .reason)
