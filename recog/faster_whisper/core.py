@@ -57,7 +57,7 @@ def transcribe(
     outputFile = StringIO()
     write_result(result, outputFile, output)
     outputFile.seek(0)
-    logging.info("音转文耗时: %s", str(time.time() - start_time))
+    logging.info("音转文耗时: %s s ， 模型 %s", str(time.time() - start_time), model_size)
     return outputFile
 
 
